@@ -39,8 +39,8 @@ async function shRun (cl){
         for(url of res.data.sheets[0].data[0].rowData){
             if(url.values){
                 temp = url.values[0].hyperlink.split('/');
-                 if(temp.length > 6) docrun(clientDOC, temp[5]);
-                 else docrun(clientDOC, '12Xd7eqF4R-2Wzfb0ZgLlMNsQFzc9gNWrWyhtpWgHNis');
+                 if(temp.length > 6) docRun(clientDOC, temp[5]);
+                 else docRun(clientDOC, '12Xd7eqF4R-2Wzfb0ZgLlMNsQFzc9gNWrWyhtpWgHNis');
             }
         }  
     }catch(err){
@@ -48,7 +48,7 @@ async function shRun (cl){
     }
 }
 
-async function docrun (cl, id){
+async function docRun (cl, id){
     try{
         const docApi = google.docs({version:'v1', auth: cl});
         const opt = {
